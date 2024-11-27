@@ -6,6 +6,19 @@ This is basic React application display "Hello World" on the screen. This applic
 
 Multistage builds offer a great way to streamline Docker images, making them smaller and more secure. We have taken our [Dockerfile](/Dockerfile) and improved it by using a multi-stage build. This allows us increase the security of our image by removing the build dependencies from the final image. The final image is now much smaller and only contains the files needed to run the application. The image size has been reduced from 1.7GB to 200MB.
 
+## Deploy your React app
+Step-by-step guide to deploy React app from a GitHub repository using NGINX in a Docker container on an Ubuntu server.
+### Step 1: Clone the GitHub Repository
+```
+git clone https://github.com/abrahimcse/react-app.git
+cd react-app
+```
+### Step 2: Create a Multistage Dockerfile
+In the root of your project, create a `Dockerfile`
+
+```
+vim Dockerfile
+```
 Here is the new Dockerfile with the multi-stage build:
 
 ```Dockerfile
@@ -42,7 +55,20 @@ EXPOSE 80
 # Start nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
 ```
+Save the file `esc` , `:wq` then `Enter`.
 
+### Step 3: Build and Run the Docker Container
+
+Run the following commands:
+
+- Build the Docker Image
+    ```
+    docker build -t react-app .
+    ```
+- Run the Container
+    ```
+    docker run -d -p 80:80 react-app
+    ```
 **Result:**
 
 Firstly we build an image with the default Dockerfile with the tag `react-app:` and then we build the image with the multi-stage Dockerfile with the tag `react-app-multi-stage:`. We can see that the image without the multi-stage build is 1.7GB and the image with the multi-stage build is 200MB. 
