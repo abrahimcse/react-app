@@ -73,4 +73,6 @@ Run the following commands:
 
 Firstly we build an image with the default Dockerfile with the tag `react-app:` and then we build the image with the multi-stage Dockerfile with the tag `react-app-multi-stage:`. We can see that the image without the multi-stage build is 1.4GB and the image with the multi-stage build is 142MB. 
 
+![](https://github.com/abrahimcse/react-app/blob/main/public/image.png)
+
 
