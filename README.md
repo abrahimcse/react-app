@@ -6,7 +6,7 @@ This is basic React application display "Hello World" on the screen. This applic
 
 Multistage builds offer a great way to streamline Docker images, making them smaller and more secure. We have taken our [Dockerfile](/Dockerfile) and improved it by using a multi-stage build. This allows us increase the security of our image by removing the build dependencies from the final image. The final image is now much smaller and only contains the files needed to run the application. The image size has been reduced from 1.7GB to 200MB.
 
-## Deploy your React app
+## Deploy React app
 Step-by-step guide to deploy React app from a GitHub repository using NGINX in a Docker container on an Ubuntu server.
 ### Step 1: Clone the GitHub Repository
 ```
