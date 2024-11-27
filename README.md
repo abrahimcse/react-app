@@ -14,7 +14,7 @@ git clone https://github.com/abrahimcse/react-app.git
 cd react-app
 ```
 ### Step 2: Create a Multistage Dockerfile
-In the root of your project, create a `Dockerfile`
+In the root of project, create a `Dockerfile`
 
 ```
 vim Dockerfile
